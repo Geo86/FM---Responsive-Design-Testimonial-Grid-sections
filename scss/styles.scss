@@ -70,7 +70,7 @@ main{
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap:2rem;
     padding: 0 2rem; 
-    background-color: red;
+    background-color: $Purple300;
     width: 90%;  
 }
 
@@ -113,11 +113,11 @@ main{
     }
 
     &--daniel{
-        @include set_colors($Purple500, $White);
+        @include set_colors($Purple500, $Purple50);
     }
 
     &--jonathan{
-            @include set_colors($Grey500, $White);
+            @include set_colors($Grey500, $Grey200);
     }
 
     &--jeanette{
@@ -125,7 +125,7 @@ main{
     }
 
     &--patrick{
-        @include set_colors($DarkBlue,$White);
+        @include set_colors($DarkBlue,$Grey200);
     }
 
     &--kira{
