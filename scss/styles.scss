@@ -24,6 +24,111 @@ img, picture {
 /* Form elements inherit font */
 input, button, textarea, select { font: inherit; }
 
+/*********
+COLORS
+******************/
+
+/*purple*/
+
+$Purple50: hsl(260, 100%, 95%);
+$Purple300: hsl(264, 82%, 80%);
+$Purple500: hsl(263, 55%, 52%);
+
+/*neutral*/
+
+$White: hsl(0, 0%, 100%);
+$Grey100: hsl(214, 17%, 92%);
+$Grey200: hsl(0, 0%, 81%);
+$Grey400: hsl(224, 10%, 45%);
+$Grey500: hsl(217, 19%, 35%);
+$DarkBlue: hsl(219, 29%, 14%);
+$Black: hsl(0, 0%, 7%);
+
+/*mixins*/
+
+@mixin set_colors($bg-col,$font-col){
+    background-color: $bg-col;
+    color:$font-col;
+}
 body{
-    background:green;
+    background:$Grey200;
+    min-height: 100vh;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    text-wrap: pretty;
+}
+
+main{
+    height: 100vh;
+    display:grid;
+    place-items: center;
+    width:100%;    
+}
+
+.testimonials{
+
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap:2rem;
+    padding: 0 2rem; 
+    background-color: red;
+    width: 90%;  
+}
+
+.testimonial{
+
+    padding:2.5rem;
+    border-radius: 10px;
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+
+    &__reviewer{
+        display:flex;
+        gap:1rem;
+
+        img{
+            border-radius: 50%;
+        }
+        
+    }
+
+    &__summary{
+        font-size:1.5rem;
+        font-weight: 500;
+    }
+
+    &__reviewer-name{
+        font-size:1.1rem;
+        font-weight: 300;
+    }
+
+    &__graduate{
+        font-size: 0.9rem;
+        font-weight: 200;
+    }
+
+    &__text{
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    &--daniel{
+        @include set_colors($Purple500, $White);
+    }
+
+    &--jonathan{
+            @include set_colors($Grey500, $White);
+    }
+
+    &--jeanette{
+        @include set_colors($White,$Grey500);
+    }
+
+    &--patrick{
+        @include set_colors($DarkBlue,$White);
+    }
+
+    &--kira{
+        @include set_colors($White,$Grey500);
+    }
 }
