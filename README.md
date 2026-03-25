@@ -22,6 +22,7 @@ Users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
 
+
 ### Screenshot
 
 ![](./screenshot.png)
